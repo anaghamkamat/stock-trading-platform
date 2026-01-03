@@ -1,0 +1,575 @@
+/* =========================
+   GLOBAL RESET
+========================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  min-height: 100vh;
+  color: #ffffff;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 40px;
+  background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(6px);
+}
+
+.nav-left,
+.nav-right {
+  display: flex;
+  gap: 20px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+nav a:hover {
+  color: #1fa2c1;
+}
+
+.logout-btn {
+  background: transparent;
+  border: 1px solid #1fa2c1;
+  color: white;
+  padding: 6px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.logout-btn:hover {
+  background: #1fa2c1;
+}
+
+/* =========================
+   PAGE LAYOUT
+========================= */
+.page {
+  padding: 40px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+h1 {
+  margin-bottom: 25px;
+  font-size: 28px;
+}
+
+/* =========================
+   AUTH (LOGIN / REGISTER)
+========================= */
+.auth-page {
+  min-height: calc(100vh - 70px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.auth-card {
+  width: 380px;
+  background: rgba(0, 0, 0, 0.55);
+  padding: 32px;
+  border-radius: 14px;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.6);
+}
+
+.auth-card h2 {
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.auth-subtitle {
+  text-align: center;
+  font-size: 14px;
+  opacity: 0.7;
+  margin-bottom: 20px;
+}
+
+.auth-card input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 14px;
+  border-radius: 6px;
+  border: none;
+}
+
+.auth-card button {
+  width: 100%;
+  padding: 12px;
+  background: #1fa4c7;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.auth-card button:hover {
+  background: #1687a3;
+}
+
+.auth-footer {
+  text-align: center;
+  margin-top: 18px;
+  font-size: 14px;
+}
+
+.auth-footer a {
+  color: #1fa2c1;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.error {
+  color: #ff6b6b;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.success {
+  color: #4caf50;
+  text-align: center;
+  margin-top: 10px;
+}
+
+/* =========================
+   TRADE FORM
+========================= */
+.trade-card {
+  background: rgba(0, 0, 0, 0.6);
+  padding: 26px;
+  border-radius: 14px;
+  width: 360px;
+  margin: 40px auto;
+}
+
+.trade-card input {
+  width: 100%;
+  padding: 11px;
+  margin-top: 12px;
+  border-radius: 6px;
+  border: none;
+}
+
+.trade-card button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 14px;
+  background: #1fa2c1;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.trade-card .secondary {
+  background: #ff5252;
+}
+
+.trade-card button:hover {
+  opacity: 0.9;
+}
+
+/* =========================
+   DASHBOARD STATS
+========================= */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 22px;
+}
+
+.stat-card {
+  background: rgba(0, 0, 0, 0.6);
+  padding: 24px;
+  border-radius: 14px;
+  text-align: center;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+}
+
+.stat-card h3 {
+  font-size: 13px;
+  opacity: 0.75;
+}
+
+.stat-card p {
+  font-size: 26px;
+  font-weight: bold;
+  margin-top: 8px;
+}
+
+.profit {
+  color: #4caf50;
+}
+
+.loss {
+  color: #ff5252;
+}
+
+/* =========================
+   DASHBOARD GRID LAYOUT
+========================= */
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.dashboard-full {
+  margin-top: 40px;
+}
+
+/* =========================
+   DASHBOARD CARDS
+========================= */
+.dashboard-card {
+  background: rgba(0, 0, 0, 0.6);
+  padding: 26px;
+  border-radius: 16px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.dashboard-card:hover {
+  transform: translateY(-6px);
+}
+
+.dashboard-card h3 {
+  margin-bottom: 15px;
+}
+
+/* =========================
+   CHARTS
+========================= */
+.chart-wrapper {
+  width: 260px;
+  height: 260px;
+  margin: auto;
+}
+
+/* =========================
+   LIVE TICKER
+========================= */
+.ticker {
+  display: flex;
+  gap: 30px;
+  padding: 14px 20px;
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 12px;
+  overflow-x: auto;
+}
+
+.ticker-item {
+  display: flex;
+  gap: 8px;
+  white-space: nowrap;
+  font-size: 14px;
+}
+
+/* =========================
+   SUGGESTED TRADES / WATCHLIST
+========================= */
+.suggested-row {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  gap: 12px;
+  padding: 10px;
+  margin-top: 12px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+}
+
+.small-btn {
+  padding: 6px 12px;
+  border-radius: 6px;
+  background: transparent;
+  border: 1px solid #1fa2c1;
+  color: white;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.small-btn:hover {
+  background: #1fa2c1;
+}
+
+/* =========================
+   TRADE HISTORY TABLE
+========================= */
+.trade-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+}
+
+.trade-table th,
+.trade-table td {
+  padding: 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  text-align: center;
+}
+
+.trade-table th {
+  font-size: 13px;
+  opacity: 0.7;
+}
+
+/* =========================
+   HEATMAP
+========================= */
+.heatmap {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 15px;
+}
+
+.heat-tile {
+  padding: 18px;
+  border-radius: 12px;
+  text-align: center;
+  font-weight: bold;
+  transition: transform 0.25s ease;
+}
+
+.heat-tile:hover {
+  transform: scale(1.06);
+}
+
+/* =========================
+   MODAL
+========================= */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal {
+  background: #111;
+  padding: 26px;
+  border-radius: 14px;
+  width: 340px;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+/* =========================
+   ANIMATIONS
+========================= */
+.animate {
+  animation: fadeUp 0.6s ease forwards;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.assistant-btn {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  background: #1fa2c1;
+  border: none;
+  border-radius: 50%;
+  width: 55px;
+  height: 55px;
+  font-size: 22px;
+  cursor: pointer;
+  z-index: 999;
+}
+
+.assistant-box {
+  position: fixed;
+  bottom: 90px;
+  right: 25px;
+  width: 320px;
+  background: #111;
+  border-radius: 14px;
+  padding: 15px;
+  z-index: 999;
+}
+
+.assistant-messages {
+  max-height: 220px;
+  overflow-y: auto;
+  margin-bottom: 10px;
+}
+
+.msg {
+  padding: 8px 10px;
+  border-radius: 8px;
+  margin-bottom: 6px;
+  font-size: 13px;
+}
+
+.msg.user {
+  background: #1fa2c1;
+  align-self: flex-end;
+}
+
+.msg.assistant {
+  background: rgba(255,255,255,0.1);
+}
+
+.assistant-input {
+  display: flex;
+  gap: 8px;
+}
+
+.assistant-input input {
+  flex: 1;
+  padding: 8px;
+  border-radius: 6px;
+  border: none;
+}
+
+.assistant-input button {
+  background: #1fa2c1;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.assistant-box h3 {
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.msg.user {
+  background: #1fa2c1;
+  color: white;
+  align-self: flex-end;
+}
+
+.msg.assistant {
+  background: rgba(255,255,255,0.1);
+}
+/* =========================
+   GPT STYLE ASSISTANT
+========================= */
+.assistant-fab {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  background: #1fa2c1;
+  border: none;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+.assistant-panel {
+  position: fixed;
+  bottom: 95px;
+  right: 25px;
+  width: 340px;
+  height: 460px;
+  background: #111;
+  border-radius: 14px;
+  display: flex;
+  flex-direction: column;
+  z-index: 1000;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.7);
+}
+
+.assistant-header {
+  padding: 12px 15px;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.assistant-body {
+  flex: 1;
+  padding: 15px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.msg {
+  max-width: 80%;
+  padding: 10px 12px;
+  border-radius: 10px;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.msg.user {
+  background: #1fa2c1;
+  color: white;
+  align-self: flex-end;
+}
+
+.msg.assistant {
+  background: rgba(255,255,255,0.08);
+  align-self: flex-start;
+}
+
+.msg.typing {
+  font-style: italic;
+  opacity: 0.7;
+}
+
+.assistant-input {
+  display: flex;
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.assistant-input input {
+  flex: 1;
+  padding: 12px;
+  background: transparent;
+  border: none;
+  color: white;
+}
+
+.assistant-input button {
+  padding: 0 16px;
+  background: transparent;
+  border: none;
+  color: #1fa2c1;
+  font-size: 18px;
+  cursor: pointer;
+}
