@@ -1,14 +1,14 @@
-import pkg from "pg";
-const { Pool } = pkg;
+const { Pool } = require("pg");
 
-export const pool = new Pool({
-  user: "postgres",
-  password: "Anagha@2906",
-  host: "localhost",
-  database: "trading_db",
-  port: 5432
+const pool = new Pool({
+  connectionString: process.env.DATABASE_URL,
+  ssl: {
+    rejectUnauthorized: false
+  }
 });
 
-pool.query("SELECT current_database()")
-  .then(res => console.log("CONNECTED TO DB:", res.rows[0].current_database))
+pool.connect()
+  .then(() => console.log("Database connected successfully"))
   .catch(err => console.error("DB CONNECTION ERROR:", err.message));
+
+module.exports = pool;
